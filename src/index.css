@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global overrides for production feel */
+@layer base {
+  html, body {
+    @apply overscroll-none bg-gray-50;
+    scroll-behavior: smooth;
+  }
+  /* remove rubber-band on iOS/Touch devices */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  /* disable rubberband effect globally */
+  * {
+    overscroll-behavior: none;
+  }
+}
+  
+  /* GLASS COMPONENTS */
+
+@layer components {
+
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl shadow-xl;
+  }
+
+  .glass-navbar {
+    @apply bg-white/10 backdrop-blur-xl border-b border-white/20;
+  }
+
+  .glass-sidebar {
+    @apply bg-black/40 backdrop-blur-xl border-r border-white/10;
+  }
+
+  .glass-input {
+    @apply bg-white/10 border border-white/20 rounded-lg px-4 py-3 
+    focus:outline-none focus:ring-2 focus:ring-indigo-500;
+  }
+
+  .btn-glow {
+    @apply bg-gradient-to-r from-indigo-500 to-purple-600 text-white
+    px-5 py-2 rounded-lg font-semibold
+    transition-all duration-300
+    hover:scale-105 hover:shadow-xl;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl;
+  }
+.glass-card{
+background: rgba(255,255,255,0.7);
+backdrop-filter: blur(8px);
+border-radius:16px;
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
+}
+
+.glass-input{
+padding:10px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+.card-hover:hover{
+transform:translateY(-3px);
+transition:0.2s;
+}
+
+}
